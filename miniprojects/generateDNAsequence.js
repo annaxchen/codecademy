@@ -54,13 +54,20 @@ const pAequorFactory = (num, arr) => {
 
 let storedArray = [];
 
+//creates 30 instances of DNA where likelihood survival is higher
 const create30instances = () => {
-  for (i=1; i<=30; i++) {
-    storedArray.push(pAequorFactory((i), mockUpStrand()))
+  for (i=1; i<200; i++){let strand = (pAequorFactory((i), mockUpStrand()))
+  if (strand.willLikelySurvive() === true && storedArray.length < 30){
+    storedArray.push(strand)
   }
-}
+}}
 
 create30instances()
 
 //returns 30 instances of the specimen
 console.log(storedArray);
+//checks that count = 30
+console.log(storedArray.length);
+
+
+
