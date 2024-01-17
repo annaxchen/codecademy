@@ -53,14 +53,17 @@ const pAequorFactory = (num, arr) => {
 //console.log(pAequorFactory(2, mockUpStrand()))
 
 let storedArray = [];
-
-//creates 30 instances of DNA where likelihood survival is higher
+let idCounter = 1;
+//creates 30 instances of DNA where likelihood survival is higher using a While Loop
 const create30instances = () => {
-  for (i=1; i<200; i++){let strand = (pAequorFactory((i), mockUpStrand()))
-  if (strand.willLikelySurvive() === true && storedArray.length < 30){
-    storedArray.push(strand)
+  while (storedArray.length<30) {
+    let strand = (pAequorFactory((idCounter), mockUpStrand()));
+    if (strand.willLikelySurvive() === true && storedArray.length < 30){
+    storedArray.push(strand);
+    idCounter++
   }
 }}
+
 
 create30instances()
 
