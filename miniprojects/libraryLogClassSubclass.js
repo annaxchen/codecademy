@@ -18,8 +18,7 @@ class Media {
   }
   getAverageRating() {
     let sumOfRatings =
-      this._ratings.reduce((accumulator, rating) => accumulator + rating, 0) /
-      this._ratings.length;
+      this._ratings.reduce((accumulator, rating) => accumulator + rating, 0);
     let averageRating = sumOfRatings / this._ratings.length;
     return averageRating;
   }
@@ -82,7 +81,7 @@ console.log(newBook);
 const newMovie = new Movie("director", "title", "runTime", [5, 5, 10]);
 console.log(newMovie);
 
-const newCD = new CD("artist", "title", "song1, song2, song3", [5, 5, 10]);
+const newCD = new CD("artist", "title", ['song1', 'song2', 'song3'], [5, 5, 10]);
 
 console.log(newCD);
 newBook.toggleCheckOutStatus(false);
